@@ -20,11 +20,11 @@ hist_r = np.minimum(hist_r, 1.0)
 print("range of hist_r: [%.1f, %.1f]"%(hist_r.min(), hist_r.max()))
 
 result = np.zeros(img_i.shape)
-height, wigth = img_i.shape[0], img_i.shape[1]
+height, width = img_i.shape[0], img_i.shape[1]
 h,s,v = cv2.split(hsv_i)
 
 for i in range(height):
-    for j in range(wigth):
+    for j in range(width):
         h_value = h[i,j]
         s_value = s[i,j]
         result[i,j] = hist_r[h_value, s_value]
